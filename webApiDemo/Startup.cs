@@ -17,10 +17,10 @@ public class Startup
 
     services.AddCors(options =>
     {
-      options.AddPolicy("AllowAll",
+      options.AddPolicy("AllowLocalhost",
         builder =>
         {
-          builder.AllowAnyOrigin()
+          builder.WithOrigins("https://dav-dan-app-s3u7.vercel.app/") 
             .AllowAnyMethod()
             .AllowAnyHeader();
         });
@@ -41,9 +41,9 @@ public class Startup
       app.UseSwaggerUI();
     }
 
+    app.UseCors("AllowAll");
     app.UseRouting();
 
-    app.UseCors("AllowAll");
 
     app.UseHttpsRedirection();
     app.UseAuthorization();
