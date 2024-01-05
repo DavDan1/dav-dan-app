@@ -1,12 +1,12 @@
 import ChuckNorrisJoke from '../components/ChuckNorrisJoke';
 
-const IndexPage: React.FC = () => {
+const ChuckNorrisJokePage: React.FC = () => {
   return (
     <div>
-      <h1>Welcome to Chuck Norris Jokes</h1>
+      <h1>Chuck Norris Joke Page</h1>
       <ChuckNorrisJoke />
     </div>
   );
 };
 
-export default IndexPage;
+export default ChuckNorrisJokePage;
