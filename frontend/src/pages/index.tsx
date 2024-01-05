@@ -6,8 +6,15 @@ const IndexPage: React.FC = () => {
       const response = await fetch(
         'https://weather-app-davitdanielyan-e3uzzxqbva-uc.a.run.app/api/ChuckNorris/random-joke',
       );
-      const data = await response.json();
-      console.log(response)
+
+      if (!response.ok) {
+        console.error('Request failed with status:', response.status);
+        return 'Failed to fetch Chuck Norris Joke';
+      }
+
+      const data = await response.text(); 
+      console.log('Data:', data);
+
       return data;
     } catch (error) {
       console.error('Error fetching data:', error);
