@@ -6,7 +6,7 @@ const ChuckNorrisJoke = () => {
 
     const getJoke = async () => {
         try {
-            const response = await axios.get('https://weather-app-davitdanielyan-e3uzzxqbva-uc.a.run.app/api/ChuckNorris/random-joke');
+            const response = await axios.get('https://weather-app-davitdanielyan-e3uzzxqbva-uc.a.run.app/api/ChuckNorris/jokes/random');
             setJoke(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
