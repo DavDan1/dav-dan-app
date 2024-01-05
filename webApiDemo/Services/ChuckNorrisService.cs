@@ -1,4 +1,3 @@
-
 public class ChuckNorrisService
 {
   private readonly HttpClient _httpClient;
@@ -6,11 +5,12 @@ public class ChuckNorrisService
   public ChuckNorrisService(HttpClient httpClient)
   {
     _httpClient = httpClient;
+    _httpClient.BaseAddress = new Uri("https://api.chucknorris.io/");
   }
 
   public async Task<string> GetRandomJoke()
   {
-    var response = await _httpClient.GetStringAsync("https://api.chucknorris.io/jokes/random");
+    var response = await _httpClient.GetStringAsync("jokes/random");
     return response;
   }
 }
