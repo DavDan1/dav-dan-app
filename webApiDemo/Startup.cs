@@ -20,12 +20,20 @@ public class Startup
       options.AddPolicy("AllowLocalhost",
         builder =>
         {
-          builder.WithOrigins("https://dav-dan-app-s3u7.vercel.app/") 
+          builder.WithOrigins("http://localhost:3000")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+        });
+
+      options.AddPolicy("AllowVercel",
+        builder =>
+        {
+          builder.WithOrigins("https://dav-dan-app-s3u7.vercel.app")
             .AllowAnyMethod()
             .AllowAnyHeader();
         });
     });
-    
+
     services.AddControllers();
 
     services.AddEndpointsApiExplorer();
@@ -41,7 +49,7 @@ public class Startup
       app.UseSwaggerUI();
     }
 
-    app.UseCors("AllowAll");
+    app.UseCors(env.IsDevelopment() ? "AllowLocalhost" : "AllowVercel");
     app.UseRouting();
 
 
