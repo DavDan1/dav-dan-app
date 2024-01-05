@@ -10,6 +10,7 @@ const ChuckNorrisJoke: React.FC<ChuckNorrisJokeProps> = ({ getJoke }) => {
   const generateJoke = async () => {
     const newJoke = await getJoke();
     setJoke(newJoke);
+    console.log(newJoke)
   };
 
   return (

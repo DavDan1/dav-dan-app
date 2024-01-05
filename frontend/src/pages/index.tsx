@@ -4,9 +4,10 @@ const IndexPage: React.FC = () => {
   const getJoke = async (): Promise<string> => {
     try {
       const response = await fetch(
-        'https://weather-app-davitdanielyan-e3uzzxqbva-uc.a.run.app/api/ChuckNorris/random-jok',
+        'https://weather-app-davitdanielyan-e3uzzxqbva-uc.a.run.app/api/ChuckNorris/random-joke',
       );
       const data = await response.json();
+      console.log(response)
       return data;
     } catch (error) {
       console.error('Error fetching data:', error);
