@@ -6,6 +6,5 @@ public class ChuckNorrisApiOptions
   {
     BaseUrl = baseUrl;
   }
-
   public string BaseUrl { get; set; }
 }

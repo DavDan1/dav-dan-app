@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-[Route("api/[controller]")]
+[Route("/[controller]")]
 [ApiController]
 public class ChuckNorrisController : ControllerBase
 {
@@ -13,7 +13,7 @@ public class ChuckNorrisController : ControllerBase
     _chuckNorrisService = chuckNorrisService;
   }
 
-  [HttpGet("jokes/random")]
+  [HttpGet("/jokes/random")]
   public async Task<IActionResult> GetRandomJoke()
   {
     var joke = await _chuckNorrisService.GetRandomJoke();

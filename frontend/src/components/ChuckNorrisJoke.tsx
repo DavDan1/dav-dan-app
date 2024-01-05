@@ -6,8 +6,9 @@ const ChuckNorrisJoke = () => {
 
     const getJoke = async () => {
         try {
-            const response = await axios.get('https://weather-app-davitdanielyan-e3uzzxqbva-uc.a.run.app/api/ChuckNorris/jokes/random');
+            const response = await axios.get('http://0.0.0.0:8080');
             setJoke(response.data.value);
+            console.log(response.data.value)
         } catch (error) {
             console.error('Error fetching data:', error);
             setJoke('Failed to fetch Chuck Norris Joke');
