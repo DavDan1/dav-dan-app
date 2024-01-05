@@ -14,7 +14,7 @@ const ChuckNorrisJoke: React.FC<ChuckNorrisJokeProps> = ({ getJoke }) => {
 
   return (
     <div>
-      <h1>Chuck Norris Joke Generator</h1>
+      <h1>Chuck Norris Joke Generator by Dav Dan</h1>
       <button onClick={generateJoke}>Generate Joke</button>
       {joke && <p>{joke}</p>}
     </div>
