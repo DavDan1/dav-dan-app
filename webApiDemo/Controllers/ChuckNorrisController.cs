@@ -13,7 +13,7 @@ public class ChuckNorrisController : ControllerBase
     _chuckNorrisService = chuckNorrisService;
   }
 
-  [HttpGet("random-joke")]
+  [HttpGet("api/random-joke")]
   public async Task<IActionResult> GetRandomJoke()
   {
     var joke = await _chuckNorrisService.GetRandomJoke();
