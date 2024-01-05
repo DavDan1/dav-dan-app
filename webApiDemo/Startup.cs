@@ -1,4 +1,3 @@
-
 public class Startup
 {
   public Startup(IConfiguration configuration)
@@ -19,10 +18,17 @@ public class Startup
     if (env.IsDevelopment())
     {
       app.UseDeveloperExceptionPage();
+      app.UseSwagger();
+      app.UseSwaggerUI();
     }
 
     app.UseRouting();
+    app.UseHttpsRedirection();
+    app.UseAuthorization();
 
-    app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+    app.UseEndpoints(endpoints =>
+    {
+      endpoints.MapControllers();
+    });
   }
 }
