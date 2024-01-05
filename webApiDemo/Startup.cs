@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using webApiDemo;
 
 public class Startup
@@ -51,7 +52,7 @@ public class Startup
 
     app.UseCors(env.IsDevelopment() ? "AllowLocalhost" : "AllowVercel");
     app.UseRouting();
-
+    app.UseCors("AllowLocalhost");
 
     app.UseHttpsRedirection();
     app.UseAuthorization();
